@@ -4,7 +4,8 @@ import copy
 
 chain = TChain('l1UpgradeEmuTree/L1UpgradeTree', 'tree')
 
-for line in open('ntuple/Run3_NuGun_MC_ntuples.list', 'r'):
+#for line in open('../ntuple/Run3_NuGun_MC_ntuples.list', 'r'):
+for line in open('fileList.txt', 'r'):
     line = line.rstrip()
 
     if line.find('.root')==-1: continue
@@ -34,7 +35,7 @@ for evt in xrange(Nevt):
 
     if evt%1000==0: print('{0:.2f}'.format(Double(evt)/Double(Nevt)*100.), '% processed')
     
-    if evt == 1000000: break
+    if evt == 100000: break
     
 
 #    if len(chain.muonEt) == 0: continue
